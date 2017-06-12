@@ -26,29 +26,26 @@ class ViewController: UIViewController {
     
     // A default location to use when location permission is not granted.
     let defaultLocation = CLLocation(latitude: -33.869405, longitude: 151.199)
+    
+    @IBAction func unwindToMain(segue: UIStoryboardSegue) {
+        // Clear the map.
+        mapView.clear()
+        
+        // Add a marker to the map.
+        if selectedPlace != nil {
+            let marker = GMSMarker(position: (self.selectedPlace?.coordinate)!)
+            marker.title = selectedPlace?.name
+            marker.snippet = selectedPlace?.formattedAddress
+            marker.map = mapView
+        }
+        
+        listLikelyPlaces()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    override func loadView() {
-        let camera = GMSCameraPosition.camera(withLatitude: -33.86, longitude: 151.20, zoom: 6.0)
-        let mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
-        mapView.isMyLocationEnabled = true
-        view = mapView
-        
-        // Creates a marker in the center of the map.
-//        let marker = GMSMarker()
-//        marker.position = CLLocationCoordinate2D(latitude: -33.86, longitude: 151.20)
-//        marker.title = "Sydney"
-//        marker.snippet = "Australia"
-//        marker.map = mapView
+        mapInit()
     }
     
     func mapInit() {
@@ -57,7 +54,7 @@ class ViewController: UIViewController {
         locationManager.requestAlwaysAuthorization()
         locationManager.distanceFilter = 50
         locationManager.startUpdatingLocation()
-        locationManager.delegate = self as! CLLocationManagerDelegate
+        locationManager.delegate = self
         
         placesClient = GMSPlacesClient.shared()
         
@@ -97,6 +94,15 @@ class ViewController: UIViewController {
                 }
             }
         })
+    }
+    
+    // Prepare the segue.
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "segueToSelect" {
+            if let nextViewController = segue.destination as? PlacesViewController {
+                nextViewController.likelyPlaces = likelyPlaces
+            }
+        }
     }
 
 

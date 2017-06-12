@@ -14,6 +14,7 @@
 		AA2040111EE75FA800AC96C7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA20400F1EE75FA800AC96C7 /* LaunchScreen.storyboard */; };
 		AA7488C81EE76A72004D7FBD /* APIKey.plist in Resources */ = {isa = PBXBuildFile; fileRef = AA7488C71EE76A72004D7FBD /* APIKey.plist */; };
 		AA7488CA1EE76B24004D7FBD /* KeyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7488C91EE76B24004D7FBD /* KeyManager.swift */; };
+		AA8ECA291EEF3801005CD804 /* PlacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8ECA281EEF3801005CD804 /* PlacesViewController.swift */; };
 		C73A2CF3EBB0B8E34638BA02 /* libPods-GoogleMapExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 608A347AA066FA10FE89FF6B /* libPods-GoogleMapExample.a */; };
 /* End PBXBuildFile section */
 
@@ -30,6 +31,7 @@
 		AA2040121EE75FA800AC96C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AA7488C71EE76A72004D7FBD /* APIKey.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = APIKey.plist; sourceTree = "<group>"; };
 		AA7488C91EE76B24004D7FBD /* KeyManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyManager.swift; sourceTree = "<group>"; };
+		AA8ECA281EEF3801005CD804 /* PlacesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlacesViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +77,7 @@
 			children = (
 				AA2040061EE75FA800AC96C7 /* AppDelegate.swift */,
 				AA2040081EE75FA800AC96C7 /* ViewController.swift */,
+				AA8ECA281EEF3801005CD804 /* PlacesViewController.swift */,
 				AA7488C91EE76B24004D7FBD /* KeyManager.swift */,
 				AA20400A1EE75FA800AC96C7 /* Main.storyboard */,
 				AA20400D1EE75FA800AC96C7 /* Assets.xcassets */,
@@ -218,6 +221,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA8ECA291EEF3801005CD804 /* PlacesViewController.swift in Sources */,
 				AA2040091EE75FA800AC96C7 /* ViewController.swift in Sources */,
 				AA2040071EE75FA800AC96C7 /* AppDelegate.swift in Sources */,
 				AA7488CA1EE76B24004D7FBD /* KeyManager.swift in Sources */,
